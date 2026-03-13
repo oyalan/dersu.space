@@ -336,6 +336,38 @@ h4 a {
         margin: 24px 0;
     }
 
+    /* Link page: icons row aligned with links block (not fixed) */
+    .link-page #icons {
+        position: absolute;
+        flex-direction: row;
+        top: 7.5rem;
+        right: auto;
+        bottom: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 2rem);
+        max-width: 40rem;
+        gap: 8px;
+        z-index: 1;
+    }
+
+    .link-page #icons li {
+        flex: 1;
+    }
+
+    .link-page #icons li a {
+        width: 100%;
+        height: 44px;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    .link-page #links {
+        top: calc(7.5rem + 52px);
+        max-height: calc(100vh - 7.5rem - 52px - 1rem);
+        z-index: 1;
+    }
+
     .toggle {
         right: 1.5rem;
     }
@@ -382,6 +414,22 @@ h4 a {
 
     #icons {
         width: 1.5rem;
+    }
+
+    /* Link page: adjust for phone header height */
+    .link-page #icons {
+        top: 6.5rem;
+        gap: 6px;
+    }
+
+    .link-page #icons li a {
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .link-page #links {
+        top: calc(6.5rem + 48px);
+        max-height: calc(100vh - 6.5rem - 48px - 1rem);
     }
 
     .toggle {

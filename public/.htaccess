@@ -13,3 +13,22 @@ RewriteRule ^ /%1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
 RewriteRule ^(.+)$ $1/index.html [L]
+
+# Redirect unknown URLs to home page (avoid hard 404 for mistyped/incomplete paths)
+RewriteCond %{REQUEST_URI} !^/$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . / [R=302,L]
+
+# Redirect common HTTP error responses to home page
+ErrorDocument 400 /
+ErrorDocument 401 /
+ErrorDocument 403 /
+ErrorDocument 404 /
+ErrorDocument 405 /
+ErrorDocument 408 /
+ErrorDocument 410 /
+ErrorDocument 500 /
+ErrorDocument 502 /
+ErrorDocument 503 /
+ErrorDocument 504 /
