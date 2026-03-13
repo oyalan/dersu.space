@@ -80,6 +80,7 @@ header .navbar-brand {
     top: 1.4rem;
     font-size: 4rem;
     position: absolute;
+    z-index: 3;
     transition: 1.4s;
     text-decoration: none;
     line-height: inherit;
@@ -243,13 +244,15 @@ section.collapsed {
 
 #links {
     position: absolute;
-    top: 50%;
+    top: 8.5rem;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     margin: 0;
-    padding: 0 1rem;
+    padding: 0 1rem 1rem;
     width: 100%;
     max-width: 44rem;
+    max-height: calc(100vh - 9.5rem);
+    overflow-y: auto;
     box-sizing: border-box;
     z-index: 1;
 }
@@ -342,7 +345,9 @@ h4 a {
     }
 
     #links {
-        padding: 0 1rem;
+        top: 7.5rem;
+        max-height: calc(100vh - 8.5rem);
+        padding: 0 1rem 1rem;
     }
 
     #links li a {
@@ -388,7 +393,9 @@ h4 a {
     }
 
     #links {
-        padding: 0 1rem;
+        top: 6.5rem;
+        max-height: calc(100vh - 7.2rem);
+        padding: 0 1rem 1rem;
     }
 
     #links li a {

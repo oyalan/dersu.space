@@ -74,6 +74,8 @@ dist/
 ### Main site (index, about, link, soon)
 - **Bootstrap removed** — Bootstrap 4, jQuery, and Popper.js vendored files have been deleted from `public/`
 - **Flexbox centering** — inner pages (about, link, soon) use `display: flex` on the section container instead of fragile `position: absolute + transform: translate(-50%, -50%)`. Fixes link.html's off-center padding issue
+- **Brand layering fix** — on `link.html`, the `Dersu` brand now has a higher stacking order so the external links list never renders above it at any breakpoint
+- **Header/content separation** — on `link.html`, `#links` now starts below the header with viewport-based max height + vertical scroll, preventing any overlap with the `Dersu` brand on all screen sizes
 - **Contact** — all pages use `mailto:dersudoganmusic@gmail.com` instead of linking to the "soon" placeholder
 - **Navigation** — all pages include a "Work" link to `/portfolio`
 
