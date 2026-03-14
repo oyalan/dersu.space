@@ -25,10 +25,10 @@
 .about {
     position: absolute;
     max-width: 50%;
-    top: 50%;
+    top: 8.5rem;
     left: 50%;
-    transform: translate(-50%, -50%);
-    max-height: 85vh;
+    transform: translateX(-50%);
+    max-height: calc(100vh - 9.5rem);
     overflow-y: auto;
     z-index: 1;
     padding: 1rem;
@@ -71,7 +71,9 @@ h3 p {
 @media (max-width: 768px) {
 
     .about {
+        top: 7.5rem;
         max-width: 75%;
+        max-height: calc(100vh - 8.5rem);
     }
 
     .about h2 {
@@ -97,8 +99,9 @@ h3 p {
 @media (max-width: 480px) {
 
     .about {
+        top: 6.5rem;
         max-width: 90%;
-        max-height: 80vh;
+        max-height: calc(100vh - 7.2rem);
     }
 
     .about h2 {
