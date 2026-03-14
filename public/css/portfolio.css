@@ -115,6 +115,22 @@ a {
 }
 
 .sidebar-contact {
+    margin-top: 0;
+    font-family: 'roboto', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888;
+    text-decoration: none;
+    padding-top: 14px;
+    transition: color 0.2s ease;
+}
+
+.sidebar-contact:hover {
+    color: rgb(64, 195, 255);
+}
+
+.sidebar-crosslink {
     margin-top: auto;
     font-family: 'roboto', sans-serif;
     font-size: 11px;
@@ -122,11 +138,11 @@ a {
     letter-spacing: 1.5px;
     color: #888;
     text-decoration: none;
-    padding-top: 40px;
+    padding-top: 0;
     transition: color 0.2s ease;
 }
 
-.sidebar-contact:hover {
+.sidebar-crosslink:hover {
     color: rgb(64, 195, 255);
 }
 
@@ -157,6 +173,7 @@ a {
     position: fixed;
     top: 24px;
     left: 24px;
+    right: auto;
     z-index: 20;
     background: none;
     border: none;
@@ -164,6 +181,7 @@ a {
     padding: 4px;
     width: 28px;
     height: 20px;
+    transition: left 0.3s ease;
 }
 
 .hamburger span {
@@ -320,6 +338,7 @@ a {
         transform: translateX(-100%);
         z-index: 100;
         background: rgba(0, 0, 0, 0.95);
+        padding-bottom: calc(56px + env(safe-area-inset-bottom));
     }
 
     .sidebar.open {
@@ -328,6 +347,22 @@ a {
 
     .hamburger {
         display: block;
+        z-index: 120;
+    }
+
+    .hamburger.active {
+        left: min(calc(75vw - 44px), 236px);
+        right: auto;
+    }
+
+    .sidebar-contact {
+        padding-top: 12px;
+        padding-bottom: 20px;
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+
+    .sidebar-crosslink {
+        padding-top: 0;
     }
 
     .portfolio-content {

@@ -5,7 +5,7 @@ A static multi-page website for musician Dersu Doğan, built with Vite.
 ## Architecture
 
 - **Vite** — dev server with HMR + production build (`dist/`)
-- **Multi-page app** — each page is a standalone HTML entry point (`index.html`, `about.html`, `portfolio.html`, `link.html`, `soon.html`)
+- **Multi-page app** — each page is a standalone HTML entry point (`index.html`, `about.html`, `portfolio.html`, `academia.html`, `link.html`, `soon.html`)
 - **Static assets** live in `public/` and are copied to `dist/` as-is (no bundling)
 - **Clean URLs** — `/about` instead of `/about.html`; Vite dev plugin handles it locally, Apache `.htaccess` + folder-based `index.html` structure handles it in production (no trailing slashes)
 - **Fallback redirects** — unknown/incomplete URLs and common HTTP error responses are redirected to `/` (home) via Apache rules; a static `404.html` redirect page is also shipped for hosts that serve 404 pages directly
@@ -19,6 +19,7 @@ A static multi-page website for musician Dersu Doğan, built with Vite.
 ├── index.html          # Home page (Vite entry)
 ├── about.html          # About page
 ├── portfolio.html      # Portfolio — sidebar + 3-column card grid (standalone)
+├── academia.html       # Academia — sidebar + 3-column card grid (standalone)
 ├── link.html           # External links
 ├── soon.html           # Placeholder page
 ├── vite.config.js      # Vite MPA config + clean URL plugin
@@ -26,7 +27,7 @@ A static multi-page website for musician Dersu Doğan, built with Vite.
 ├── public/
 │   ├── .htaccess       # Apache rewrite rules for clean URLs
 │   ├── 404.html        # Static fallback: redirects unknown routes/errors to /
-│   ├── css/            # Custom styles (style.css, about.css, portfolio.css)
+│   ├── css/            # Custom styles (style.css, about.css, portfolio.css, academia.css)
 │   ├── js/             # Particles.js, app.js
 │   ├── fonts/          # Quinn, Roboto Condensed
 │   └── images/         # SVG logo / favicon
@@ -44,7 +45,7 @@ npm install
 npm run dev       # Start dev server (localhost:5173)
 ```
 
-Clean URLs (`/about`, `/link`, `/portfolio`, `/soon`) work in dev via a custom Vite middleware.
+Clean URLs (`/about`, `/link`, `/portfolio`, `/academia`, `/soon`) work in dev via a custom Vite middleware.
 
 ## Build & Deploy
 
@@ -63,6 +64,7 @@ dist/
 ├── about/index.html        # /about
 ├── link/index.html         # /link
 ├── portfolio/index.html    # /portfolio
+├── academia/index.html     # /academia
 ├── soon/index.html         # /soon
 ├── .htaccess               # Strips trailing slashes, redirects .html URLs
 ├── 404.html                # Redirect fallback page for direct 404 serving
@@ -85,7 +87,10 @@ dist/
 - **Link list deduplicated** — on `link.html`, standalone rectangular `Youtube` and `Instagram` items were removed from `#links` because those destinations already exist in the 4-icon social row
 - **Link list refreshed** — on `link.html`, the `Karma Kaset röportajı` button was removed; three new buttons were inserted directly under the 4-icon row and above the `Uyanırsam` set: `7 Timeless Sins (Soundtrack) - Spotify`, `7 Timeless Sins (Soundtrack) - Apple Music`, and `Nephes - YouTube`; `Uyanırsam - Youtube` label was normalized to `Uyanırsam - YouTube`
 - **Contact** — all pages use `mailto:hi@dersu.space` instead of linking to the "soon" placeholder
-- **Navigation** — all pages include a "Work" link to `/portfolio`
+- **Navigation** — main slide-out nav now uses `Academia` (`/academia`) instead of the previous `Music` item across `index`, `about`, `link`, and `soon`
+- **Navigation order update (15 Mar 2026)** — main slide-out nav order is now `Home`, `About`, `Works`, `Academia`, `Link`, `Contact` across `index`, `about`, `link`, and `soon`
+- **Nav footer credit cleanup (15 Mar 2026)** — removed `Abyo Studio, Ltd.` from main slide-out nav footer text across `index`, `about`, `link`, and `soon`; footer now shows only centered `2026©` beneath the designer credit
+- **Nav footer single-line credit (15 Mar 2026)** — in `index`, `about`, `link`, and `soon`, `Designed by tolgayonter` and `2026©` now appear on the same line in the nav footer (not separate lines)
 
 ### Portfolio page (`/portfolio`)
 - **Standalone page** — has its own CSS (`portfolio.css`), does not share the slide-out nav from the main site
@@ -99,16 +104,28 @@ dist/
 - **Kaptin Kaptin card content update** — `Kaptin Kaptin Jingle` card now uses thumbnail image `/images/kaptinkaptinbeyaz.png.avif`, links to `https://kaptinkaptin.com.tr`, shows date `2025`, and sets description text to `Brand jingles and advertising voiceovers.`
 - **Göçer Zaman card content update** — `GÖÇER ZAMAN MOVIE` card now uses thumbnail image `/images/gocerzaman.jpg`, shows date `2025`, sets description text to `Sound design and mix.`, and is intentionally non-clickable (no redirect target)
 - **Class Dismissed card content update** — `CLASS DISMISSED: LIVE STREAM` card now uses thumbnail image `/images/classdismissed.jpg`, links to `https://comd.bilkent.edu.tr/comd-will-collaborate-as-a-partner-in-the-live-stream-class-dismissed/`, shows date `2025 - New York & Ankara`, and sets description text to `Live sound streaming.`
-- **Book Part card content update** — `BOOK PART: FARKLI MEDENİYETLERİN ORTAK SESİ` card now uses thumbnail image `/images/kapak.jpg`, links to `https://www.amazon.com.tr/Depremleri-Kimli%C4%9Fine-K%C3%BClt%C3%BCrel-Miras%C4%B1na-Sosyolojik/dp/6253740946/ref=sr_1_1?...`, keeps date `2024`, and sets description text to `Sociological & Ethnomusicological research.`
-- **Portfolio chronology order update (14 Mar 2026)** — in both sidebar and card flow, project order is now: `Dersu`, `Pale Circus`, `BGD`, `ID.EXE`, `Göçer Zaman Movie`, `Class Dismissed`, `Kaptin Kaptin Jingle`, `7 Timeless Sins`, `Book Part`
+- **Metamorphic Pulse card content update (15 Mar 2026)** — `METAMORPHIC PULSE` card now replaces the previous Book Part slot, uses thumbnail image `/images/IMG_9885.jpg`, shows date `2024 - Leipzig`, and sets description text to `Audiovisual piece exhibited in Leipzig. w/Elif Kalender`.
+- **Metamorphic Pulse asset placement (15 Mar 2026)** — image file `public/images/IMG_9885.jpg` is now present in source assets so the card thumbnail loads in both dev and production.
+- **Portfolio chronology order update (15 Mar 2026)** — in both sidebar and card flow, project order is now: `Dersu`, `Pale Circus`, `BGD`, `ID.EXE`, `Göçer Zaman Movie`, `Class Dismissed`, `Kaptin Kaptin Jingle`, `7 Timeless Sins`, `Metamorphic Pulse`
 - **Black thumbnail support** — `.card-thumbnail-black` utility class in `portfolio.css` allows per-card black backgrounds for transparent logos/images (used by Kaptin Kaptin card)
 - **Contain fit tuning for poster-style assets** — on `#kaptin-kaptin`, logo image uses centered `contain` sizing at `84%` width/height; on `#gocer-zaman` and `#book-part`, poster images use centered full-area `contain` on black background to avoid cropping
 - **Anchor ID cleanup** — sidebar tags and card anchors now use semantic IDs (`#gocer-zaman`, `#class-dismissed`) instead of legacy placeholders (`#ny-theatre`, `#begehungen`)
 - **Card hover** — subtle `scale(1.02)` transform + thumbnail opacity shift
 - **Responsive** — tablet (≤1024px): 2 columns, sidebar narrows to 180px. Mobile (≤768px): 1 column, sidebar hidden behind hamburger menu that slides in as an overlay
 - **Hamburger toggle** — two-line icon animates to X on open, overlay click closes sidebar
+- **Mobile close icon parity (15 Mar 2026)** — on `portfolio` and `academia`, when the mobile sidebar opens, the active hamburger (`X`) now remains visible above the overlay/sidebar and aligns to the opened sidebar edge for a consistent close affordance
+- **Mobile Contact visibility tweak (15 Mar 2026)** — on `portfolio` and `academia`, sidebar `Contact` is shifted slightly upward on mobile with extra bottom safe-area spacing to avoid overlap with browser address/navigation UI
+- **Sidebar cross-links (15 Mar 2026)** — `portfolio` sidebar includes `Academia` above `Contact` (links to `/academia`), and `academia` sidebar includes `Works` above `Contact` (links to `/portfolio`) using the same small uppercase sidebar link style; both are positioned directly above `Contact`, and desktop spacing between them is tightened for better visual balance
 - **Particles.js** — same full-page fixed background as main site, behind all content (`z-index: 0`)
 - **Designed to grow** — adding a project means adding a card to HTML + a link to sidebar nav; grid auto-wraps
+
+### Academia page (`/academia`)
+- **Standalone page** — built as a separate MPA entry (`academia.html`) using the same layout and styles as `portfolio` (`public/css/portfolio.css`)
+- **Academia-specific style layer** — `public/css/academia.css` overrides portfolio card visuals only on the academia page (`.academia-page`) so portfolio remains unchanged
+- **Sidebar and mobile behavior parity** — fixed left sidebar, mobile hamburger/overlay, particles background, and smooth-scroll anchor behavior match the portfolio implementation
+- **Text-only rectangular cards** — thumbnail blocks are removed in academia; each card now contains only `title`, `year-place`, and `description` text inside bordered rectangular containers
+- **Sample content fill** — all three entries are populated with sample text for visual review (`PANEL`, `INSIGHTS`, and `BOOK PART`) and the sidebar order is aligned the same way
+- **Book Part description update (15 Mar 2026)** — academia `BOOK PART` description now includes the book title: `2023 Depremleri Sonrası Hatay Kimliğine ve Kültürel Mirasına Sosyolojik Bir Bakış - Sociological & Ethnomusicological research.`
 
 ### Shared
 - All vendored libraries (Particles.js) are in `public/` so Vite serves them without processing

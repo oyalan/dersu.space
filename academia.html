@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dersu — Academia">
+    <meta name="keywords"
+        content="dersu, dersu space, dersu doğan, dersu dogan, academia, research, publication, portfolio, work">
+    <meta name="author" content="Dersu Doğan">
+    <title>Dersu — Academia</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/goz_trans_Calsma_Yuzeyi_1.svg">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/css/portfolio.css">
+    <link rel="stylesheet" href="/css/academia.css">
+</head>
+
+<body class="academia-page">
+
+    <!-- Particles.js animated background -->
+    <div id="particles-js"></div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <a href="/" class="sidebar-brand">Dersu</a>
+
+        <nav class="sidebar-nav">
+            <a href="#content-1">PANEL</a>
+            <a href="#content-2">INSIGHTS</a>
+            <a href="#book-part">BOOK PART</a>
+        </nav>
+
+        <a href="/portfolio" class="sidebar-crosslink">Works</a>
+        <a href="mailto:hi@dersu.space" class="sidebar-contact">Contact</a>
+    </aside>
+
+    <!-- Sidebar overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Hamburger button (mobile) -->
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Main content -->
+    <main class="portfolio-content">
+        <div class="portfolio-grid">
+
+            <div class="card" id="content-1">
+                <h3 class="card-title">PANEL: 2024 Yılında Türkçe Şarkılarda Kadın: Spotify Top 50 Şarkılarında Söylem Analizi ve Toplumsal Cinsiyet Rolleri</h3>
+                <span class="card-date">2025 - Antalya</span>
+                <p class="card-description">Turkish Political Science Associaton - XXI. Postgraduate Conference</p>
+            </div>
+
+            <div class="card" id="content-2">
+                <h3 class="card-title">INSIGHTS: Gen Z on Turkish Streets</h3>
+                <span class="card-date">2025</span>
+                <p class="card-description">Published online by the Institute of Network Cultures, Amsterdam University of Applied Science.</p>
+            </div>
+
+            <a class="card" id="book-part" href="https://www.amazon.com.tr/Depremleri-Kimli%C4%9Fine-K%C3%BClt%C3%BCrel-Miras%C4%B1na-Sosyolojik/dp/6253740946/ref=sr_1_1?__mk_tr_TR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&amp;crid=3KWNEKEB43KR1&amp;dib=eyJ2IjoiMSJ9.uD8tuwH2vlsjhfG9cA_cs80iUI_O5JjUYj4woJpNMHM.zs8J5hJhzaHpqZvo51ZvUZejw1m8wwEM8dGQY2rlPd0&amp;dib_tag=se&amp;keywords=2023+hatay+depremleri+sonras%C4%B1&amp;qid=1773442052&amp;sprefix=2023+hatay+depremleri+sonras%C4%B1%2Caps%2C151&amp;sr=8-1" target="_blank">
+                <h3 class="card-title">BOOK PART: FARKLI MEDENİYETLERİN ORTAK SESİ</h3>
+                <span class="card-date">2024</span>
+                <p class="card-description">2023 Depremleri Sonrası Hatay Kimliğine ve Kültürel Mirasına Sosyolojik Bir Bakış - Sociological &amp; Ethnomusicological research.</p>
+            </a>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="/js/particles.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('open');
+            hamburger.classList.toggle('active');
+        }
+
+        hamburger.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Smooth scroll for sidebar nav links & close sidebar on mobile
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth < 768) {
+                    toggleSidebar();
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

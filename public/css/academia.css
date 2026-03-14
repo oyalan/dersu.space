@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Academia page overrides (text-only cards)
+   ========================================================================== */
+
+.academia-page .portfolio-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.academia-page .card {
+    background: rgba(0, 0, 0, 0.72);
+    border: 1px solid rgba(64, 195, 255, 0.5);
+    min-height: 250px;
+    padding: 22px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.academia-page .card:hover {
+    transform: translateY(-4px);
+    border-color: rgb(64, 195, 255);
+}
+
+.academia-page .card-title {
+    margin-top: 0;
+    line-height: 1.45;
+}
+
+.academia-page .card-date {
+    margin-top: 12px;
+    color: #8fa3ad;
+}
+
+.academia-page .card-description {
+    margin-top: 12px;
+    color: #d2d8dc;
+    line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+    .academia-page .portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .academia-page .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .academia-page .card {
+        min-height: 220px;
+    }
+}
