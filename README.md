@@ -84,7 +84,7 @@ dist/
 - **Social icon behavior** — all right-sidebar social links now open in a new browser tab (`target="_blank"` + `rel="noopener noreferrer"`). The vertical sidebar icon spacing is controlled with responsive `gap: clamp(...)` values and has been widened further while staying proportional across screen heights and breakpoints
 - **Link list deduplicated** — on `link.html`, standalone rectangular `Youtube` and `Instagram` items were removed from `#links` because those destinations already exist in the 4-icon social row
 - **Link list refreshed** — on `link.html`, the `Karma Kaset röportajı` button was removed; three new buttons were inserted directly under the 4-icon row and above the `Uyanırsam` set: `7 Timeless Sins (Soundtrack) - Spotify`, `7 Timeless Sins (Soundtrack) - Apple Music`, and `Nephes - YouTube`; `Uyanırsam - Youtube` label was normalized to `Uyanırsam - YouTube`
-- **Contact** — all pages use `mailto:dersudoganmusic@gmail.com` instead of linking to the "soon" placeholder
+- **Contact** — all pages use `mailto:hi@dersu.space` instead of linking to the "soon" placeholder
 - **Navigation** — all pages include a "Work" link to `/portfolio`
 
 ### Portfolio page (`/portfolio`)
