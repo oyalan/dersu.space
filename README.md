@@ -79,6 +79,7 @@ dist/
 ### Main site (index, about, link, soon)
 - **Bootstrap removed** — Bootstrap 4, jQuery, and Popper.js vendored files have been deleted from `public/`
 - **Flexbox centering** — inner pages (about, link, soon) use `display: flex` on the section container instead of fragile `position: absolute + transform: translate(-50%, -50%)`. Fixes link.html's off-center padding issue
+- **About copy refreshed** — `about.html` now uses the updated English artist bio describing Dersu's work across electronic music production, sound design, new media art, film audio, and audiovisual projects
 - **Brand layering fix** — on `link.html`, the `Dersu` brand now has a higher stacking order so the external links list never renders above it at any breakpoint
 - **Header/content separation** — on `link.html`, `#links` now starts below the header with viewport-based max height + vertical scroll, preventing any overlap with the `Dersu` brand on all screen sizes
 - **Header/content separation (about)** — on `about.html`, `.about` now starts below the header with viewport-based max height + vertical scroll at each breakpoint, so the `About.` title and biography never collide with the `Dersu` brand on smaller heights/resolutions
@@ -96,7 +97,7 @@ dist/
 - **Standalone page** — has its own CSS (`portfolio.css`), does not share the slide-out nav from the main site
 - **Left sidebar** — fixed 220px sidebar with "Dersu" brand (Quinn font, links to `/`) and a list of all project names as anchor links. Contact link pushed to bottom via `margin-top: auto`. Semi-transparent background (`rgba(0,0,0,0.85)`) lets particles subtly show through
 - **Sidebar brand sizing tweak** — portfolio sidebar brand text is slightly increased (`1.76rem`) to improve visual balance while preserving the existing layout flow
-- **3-column card grid** — CSS Grid (`repeat(3, 1fr)`) with 24px gaps. Each card has a thumbnail (cyan placeholder `rgb(64,195,255)`), title, date, and description. Cards link externally (YouTube, Spotify, SoundCloud, etc.)
+- **3-column card grid** — CSS Grid (`repeat(3, 1fr)`) with 24px gaps. Each card has a thumbnail with a black background, title, date, and description. Cards link externally (YouTube, Spotify, SoundCloud, etc.)
 - **Dersu card content update** — `Dersu` card now uses real thumbnail image `/images/Dersu_002.jpg`, navigates to `/link`, keeps the date slot intentionally blank for later editing, and sets description text to `Search for a music.`
 - **Pale Circus card content update** — `Pale Circus` card now uses thumbnail image `/images/PC_Photo3.jpg`, links to `https://palecircus.com`, keeps the date slot intentionally blank for later editing, and sets description text to `Creating a listenable noise.`
 - **BGD card content update** — `BGD` card now uses thumbnail image `/images/BGD_dersununeli_final_kare.jpg`, links to `https://open.spotify.com/intl-tr/artist/7BRoydMywzrmbIfem85iUq?si=AUCY3pv7RWuUb1DRr65BpQ`, keeps the date slot intentionally blank for later editing, and sets description text to `Ver elini öbür dünya.`
@@ -118,6 +119,8 @@ dist/
 - **Sidebar cross-links (15 Mar 2026)** — `portfolio` sidebar includes `Academia` above `Contact` (links to `/academia`), and `academia` sidebar includes `Works` above `Contact` (links to `/portfolio`) using the same small uppercase sidebar link style; both are positioned directly above `Contact`, and desktop spacing between them is tightened for better visual balance
 - **Particles.js** — same full-page fixed background as main site, behind all content (`z-index: 0`)
 - **Designed to grow** — adding a project means adding a card to HTML + a link to sidebar nav; grid auto-wraps
+
+- **RESIDUE card image update (25 May 2026)** — `RESIDUE - EU DAY` card now uses thumbnail image `/images/AB_sergi_story_01_kunye.jpg` with `.card-thumbnail-black` class and custom CSS (`object-fit: contain`) for centered vertical poster format with black sidebars (matching Hamal and Göçer Zaman), links to `https://www.instagram.com/reel/DX86MYmMjvx/`, shows date `2026 - Ankara & İstanbul`, and sets description text to `Sound design for a European Union-supported exhibitions.`
 
 ### Academia page (`/academia`)
 - **Standalone page** — built as a separate MPA entry (`academia.html`) using the same layout and styles as `portfolio` (`public/css/portfolio.css`)
